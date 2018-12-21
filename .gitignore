@@ -1,0 +1,7 @@
+# Ignore image dirs
+data_images/*
+images/*
+
+# Ignore trained models
+model_scratch.pt
+model_transfer.pt
