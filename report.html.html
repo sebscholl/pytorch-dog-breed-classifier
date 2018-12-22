@@ -13439,7 +13439,8 @@ Test Accuracy: 11% (100/836)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong> After loading in the pretrained VGG19 model, I froze it to prevent any further training by setting each feature param to not use gradient descent (back-propogration).  I then mapped a new fully connected layer's (FCL) with the same number of outputs as found in our breeds classes set and inputs as the current final layer. Doing this allows for our FCL to output predictions for each of the breed classes and be inserted seamlessly into the pretrained model.</p>
+<p>The VGG19 model uses a small kernal size which works well for detailed feature extraction and differentiation (breed coat patterns/hair). Also, the model extracts features from a given image up to a depth of 512 (dims), in the 4th and 5th convolutional layer of the model, allowing it to better learn finely detailed and complex features of a given image.</p>
 
 </div>
 </div>
